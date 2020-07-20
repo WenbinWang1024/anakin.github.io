@@ -6,7 +6,7 @@ header-img: img/post-bg-desk.jpg
 description: "Every failure is leading towards success."
 keyword: "Haiming, Haiming's Blog, 海铭的博客, zhouhaiming, 海铭, Android,Java,Programming,Timzhouyes"
 url: "http://anakin.github.io"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "https://github.com/WenbinWang1024/anakin"      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/WenbinWang1024/anakin.github.io" # you code repository
 
 # Sidebar settings
