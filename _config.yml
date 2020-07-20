@@ -1,7 +1,7 @@
 # Site settings
 title: wenbin's Blog
 SEOTitle: 王文斌的博客 | wenbin's Blog
-header-img: /img/post-bg-desk.jpg
+header-img: ./img/post-bg-desk.jpg
 # email: zhouhaimingxd@gmail.com
 description: "Every failure is leading towards success."
 keyword: "Haiming, Haiming's Blog, 海铭的博客, zhouhaiming, 海铭, Android,Java,Programming,Timzhouyes"
