@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>socket相关概念(未完成待续) | 王文斌的半亩方塘</title>
+  <title>socket相关概念 | 王文斌的半亩方塘</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="socket概念socket是一种特殊的I&#x2F;O接口，它也是一种文件描述符。每一个socket都用一个半相关描述{协议，本地地址，本地端口}来表示;一个完整的套接字则用一个相关协议{协议，本地地址，本地端口，远程地址，远程端口}来表示。socket也有一个类似于打开文件的函数调用，该函数返回一个整型的socket描述符，随后的连接建立，数据传输等操作都是通过socket来实现的； socket类型（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="socket相关概念(未完成待续)">
+<meta property="og:title" content="socket相关概念">
 <meta property="og:url" content="http://yoursite.com/2020/07/21/socket%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5/index.html">
 <meta property="og:site_name" content="王文斌的半亩方塘">
 <meta property="og:description" content="socket概念socket是一种特殊的I&#x2F;O接口，它也是一种文件描述符。每一个socket都用一个半相关描述{协议，本地地址，本地端口}来表示;一个完整的套接字则用一个相关协议{协议，本地地址，本地端口，远程地址，远程端口}来表示。socket也有一个类似于打开文件的函数调用，该函数返回一个整型的socket描述符，随后的连接建立，数据传输等操作都是通过socket来实现的； socket类型（">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-21T13:10:35.000Z">
-<meta property="article:modified_time" content="2020-07-21T15:22:29.762Z">
+<meta property="article:modified_time" content="2020-09-08T06:48:55.866Z">
 <meta property="article:author" content="王文斌">
-<meta property="article:tag" content="linux;socket">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="王文斌的半亩方塘" type="application/atom+xml">
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      socket相关概念(未完成待续)
+      socket相关概念
     </h1>
   
 
@@ -180,6 +180,8 @@
         <h1 id="socket概念"><a href="#socket概念" class="headerlink" title="socket概念"></a>socket概念</h1><p>socket是一种特殊的I/O接口，它也是一种文件描述符。<br>每一个socket都用一个半相关描述{协议，本地地址，本地端口}来表示;一个完整的套接字则用一个相关协议{协议，本地地址，本地端口，远程地址，远程端口}来表示。socket也有一个类似于打开文件的函数调用，该函数返回一个整型的socket描述符，随后的连接建立，数据传输等操作都是通过socket来实现的；</p>
 <h2 id="socket类型"><a href="#socket类型" class="headerlink" title="socket类型"></a>socket类型</h2><p>（1）流式socket(SOCK_STREAM)</p>
 <h1 id="socket使用TCP协议的流程"><a href="#socket使用TCP协议的流程" class="headerlink" title="socket使用TCP协议的流程"></a>socket使用TCP协议的流程</h1><p>!(\themes\yilia\source\assets\使用流程图.jpg)<br>服务端：socket-bind-listen-while(1){-accept}</p>
+<h1 id="socketstruct"><a href="#socketstruct" class="headerlink" title="socketstruct"></a>socketstruct</h1><p>struct sockaddr{<br>    unsigned short sa_family;(地址族)<br>    char sa_data[14];(14字节的协议地址，包含该socket的IP地址和端口号)<br>}<br>struct sockaddr_in{<br>    short int sin_family;(地址族)<br>    unsigned short int sin_port;//端口号<br>    struct in_addr sin_addr;//IP地址<br>    unsigned char sin_zero[8];//填充0以保持与struct sockaddr同样大小<br>}<br>struct in_addr{<br>    in_addr_t s_addr;//32位IPV4地址，网络字节序<br>}</p>
+<h1 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h1><h2 id="socketh函数"><a href="#socketh函数" class="headerlink" title="socketh函数"></a>socketh函数</h2><p>  原型：</p>
 
       
 
@@ -214,7 +216,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">linux;socket</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
@@ -284,6 +286,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/07/22/internet/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          internet
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/07/20/linux%E4%BF%A1%E5%8F%B7%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">linux信号知识</div>
@@ -313,7 +324,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#socket概念"><span class="toc-number">1.</span> <span class="toc-text">socket概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#socket类型"><span class="toc-number">1.1.</span> <span class="toc-text">socket类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket使用TCP协议的流程"><span class="toc-number">2.</span> <span class="toc-text">socket使用TCP协议的流程</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#socket概念"><span class="toc-number">1.</span> <span class="toc-text">socket概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#socket类型"><span class="toc-number">1.1.</span> <span class="toc-text">socket类型</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socket使用TCP协议的流程"><span class="toc-number">2.</span> <span class="toc-text">socket使用TCP协议的流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#socketstruct"><span class="toc-number">3.</span> <span class="toc-text">socketstruct</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用函数"><span class="toc-number">4.</span> <span class="toc-text">常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#socketh函数"><span class="toc-number">4.1.</span> <span class="toc-text">socketh函数</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -425,15 +436,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">linux;socket</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">线程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
